@@ -1,0 +1,5 @@
+language: Java
+
+script:
+        - ./gradlew build --scan -s
+
