@@ -19,6 +19,6 @@ public class tachograph {
     } 
     
     public int getTableLength(){
-        return TrainDataTable.size;
+        return TrainDataTable.size();
     }
 }
