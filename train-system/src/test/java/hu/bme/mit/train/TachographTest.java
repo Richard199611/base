@@ -14,6 +14,7 @@ public class TachographTest {
     @Before
     public void before(){
         system = new TrainSystem();
+        tachograph = new tachograph();
     }
 
     @Test
