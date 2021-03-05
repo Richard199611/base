@@ -6,16 +6,19 @@ import com.google.common.collect.Table;
 
 
 public class tachograph {
-    private TrainSystem system;
     public Table<String, Integer, Integer> TrainDataTable;
 
-    void createTrainTable(){
+    public void createTrainTable(){
         TrainDataTable = HashBasedTable.create();
     }
 
-    void addToTrainTable() {
+    public void addToTrainTable(TrainSystem system) {
         Date date = new Date();
-        TrainDataTable.put(date.toString(), system.getController().getReferenceSpeed(), system.getUser().getJoystickPosition()); 
+        TrainDataTable.put(date.toString(), system.getController().getReferenceSpeed(),
+         system.getUser().getJoystickPosition()); 
     } 
     
+    public int getTableLength(){
+        return TrainDataTable.size;
+    }
 }
