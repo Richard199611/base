@@ -28,16 +28,19 @@ public class TrainSensorTest {
         verify(MockTU, times(1)).setAlarmState(true);
     }
 
+    @Test
     public void SpeedLimitTooHigh() {
         trainSensor.overrideSpeedLimit(501);
         verify(MockTU, times(1)).setAlarmState(true);
     }
 
+    @Test
     public void SpeedLimitLessThanHalf() {
         trainSensor.overrideSpeedLimit((MockTC.getReferenceSpeed()/2) - 1);
         verify(MockTU, times(1)).setAlarmState(true);
     }
 
+    @Test
     public void SpeedLimitOkay() {
         trainSensor.overrideSpeedLimit(300);
         verify(MockTU, times(1)).setAlarmState(false);
